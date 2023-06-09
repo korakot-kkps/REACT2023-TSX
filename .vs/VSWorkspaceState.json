@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\TodoList",
+    "\\src\\services",
+    "\\src\\types"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\src\\components\\TodoList\\TodoCardItem.tsx",
   "PreviewInSolutionExplorer": false
 }

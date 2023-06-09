@@ -1,56 +1,21 @@
-import {
-  Action,
-  createSlice,
-  Dispatch,
-  MiddlewareAPI,
-  PayloadAction,
-} from "@reduxjs/toolkit";
-import ITodoItem from "../types/TodoItem";
-import TodoListService from "../services/TodoListService";
-import { useContext } from "react"; 
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import type { PreloadedState } from "@reduxjs/toolkit";
+import { todoApi } from "../services/TodoListService";
 
-const initialState: {
-  todoListItems: ITodoItem[];
-} = {
-  //  todoItem : TodoListService.getAll()
-  //     .then((response: any) => {
-  //        response.data;
-  //       console.log(response.data);
-  //     })
-  //     .catch((e: Error) => {
-  //       console.log(e);
-  //     })
-  //   todoList: [],
-  todoListItems: [],
-};
-const todoListSlice = createSlice({
-  name: "todoList",
-  initialState: initialState,
-  reducers: {
-    removeTodoItem(state, action) {
-      const newTodoList = state.todoListItems.filter(
-        (todoItem) => todoItem.id !== action.payload
-      );
-      state.todoListItems = newTodoList;
-    },
-  },
+const rootReducer = combineReducers({
+  [todoApi.reducerPath]: todoApi.reducer,
 });
 
-var defaultItems: ITodoItem[] = [];
-// const [defaultItems, setDefaultItems] = useState([]);
-const getDefaultTodoList = () => {
-  TodoListService.getAll()
-    .then((response: any) => {
-      //   setDefaultItems (response.data);
-      defaultItems = response.data;
-      console.log(response.data); 
-    })
-    .catch((e: Error) => {
-      console.log(e);
-    });
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
+  return configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) =>
+      // adding the api middleware enables caching, invalidation, polling and other features of `rtk-query`
+      getDefaultMiddleware().concat(todoApi.middleware),
+    preloadedState,
+  });
 };
-getDefaultTodoList();
 
-
-export const todoListAction = todoListSlice.actions;
-export default todoListSlice.reducer;
+export type RootState = ReturnType<typeof rootReducer>;
+export type AppStore = ReturnType<typeof setupStore>;
+export type AppDispatch = AppStore["dispatch"];

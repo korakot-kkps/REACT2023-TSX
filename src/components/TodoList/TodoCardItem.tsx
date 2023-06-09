@@ -3,7 +3,7 @@ import { useAppDispatch } from "../../store/hooks";
 import { modalActions } from "../../store/Modal.store";
 
 import ITodoItem from "../../types/TodoItem";
-import { todoListAction } from "../../store/TodoList.store";
+// import { todoListAction } from "../../store/TodoList.store";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -23,10 +23,10 @@ const TodoCardItem: React.FC<{ todoItem: ITodoItem }> = ({ todoItem }) => {
   const [showModal, setIsModalShown] = useState<boolean>(false);
 
   const dispatch = useAppDispatch();
-  const deleteTodoItem = () => {
-    console.log("Remove Id " + todoItem.id);
-    dispatch(todoListAction.removeTodoItem(todoItem.id));
-  };
+  // const deleteTodoItem = () => {
+  //   console.log("Remove Id " + todoItem.id);
+  //   dispatch(todoListAction.removeTodoItem(todoItem.id));
+  // };
 
   const onOpenModal = () => {
     modalActions.openModalCreateTask();

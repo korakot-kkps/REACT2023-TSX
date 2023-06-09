@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 // import tasksReducer, { tasksMiddleware } from "./Tasks.store";
-import todoListReducer from "./TodoList.store";
+import todo from "./TodoList.store";
 import modalReducer from "./Modal.store";
 // import menuReducer from "./Menu.store";
 

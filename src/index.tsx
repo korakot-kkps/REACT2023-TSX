@@ -7,8 +7,10 @@ import reportWebVitals from "./reportWebVitals";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import blueGrey from "@mui/material/colors/blueGrey";
 import { Provider } from "react-redux";
-import store from "./store/index";
+// import store from "./store/index";
+import { setupStore } from "./store/TodoList.store";
 
+const store = setupStore();
 const theme = createTheme({
   components: {
     // Name of the component ⚛️
@@ -30,13 +32,15 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
-    </Provider>
-  </React.StrictMode>
+  <>
+    <React.StrictMode>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <App /> 
+        </ThemeProvider>
+      </Provider>
+    </React.StrictMode>
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function
