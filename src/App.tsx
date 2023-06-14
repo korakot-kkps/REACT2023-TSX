@@ -8,7 +8,7 @@ import { ProtectedComponent } from "./features/auth/ProtectedComponent";
 function Hooray() {
   return (
     <>
-      <p>"Hooray you logged in!"</p>
+      <p>Hooray you logged in!</p>
       <ProtectedComponent />
     </>
   );
@@ -18,6 +18,7 @@ function App() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
+      <Route path="/portal" element={<ProtectedComponent />} />
       <Route path="*" element={<PrivateOutlet />}>
       <Route index element={<Hooray />} />
       </Route>

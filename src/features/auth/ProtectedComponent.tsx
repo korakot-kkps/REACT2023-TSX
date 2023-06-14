@@ -6,9 +6,7 @@ export function ProtectedComponent() {
 
     return (
       <>
-        <input type="button" onClick={() => attemptAccess()}>
-          {isLoading ? "Loading..." : "Make an authenticated request"}
-        </input>
+        <input type="button" onClick={() => attemptAccess()} value={isLoading ? "Loading..." : "Make an authenticated request"} />
 
         {data ? (
           <>
