@@ -4,7 +4,6 @@ import { useAuth } from "../hooks/useAuth";
 export function PrivateOutlet() {
   const auth = useAuth();
   const location = useLocation();
-
   return auth.user ? (
     <Outlet />
   ) : (

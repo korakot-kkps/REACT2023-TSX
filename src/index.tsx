@@ -9,7 +9,7 @@ import { BrowserRouter } from "react-router-dom";
 import { worker } from "./mocks/browser";
 
 worker
-  .start({ quiet: true })
+  .start({ quiet: false })
   .then(() => {
     const root = ReactDOM.createRoot(
       document.getElementById("root") as HTMLElement
