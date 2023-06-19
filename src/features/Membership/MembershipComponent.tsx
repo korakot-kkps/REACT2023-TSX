@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const UserComponent = () => {
+const MembershipComponent = () => {
 // const []
 
     return (
@@ -9,4 +9,4 @@ const UserComponent = () => {
         </div>
     );    
 }
-export default UserComponent
+export default MembershipComponent;
