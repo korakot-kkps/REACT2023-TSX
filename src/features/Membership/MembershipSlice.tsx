@@ -1,26 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import type { User } from "../../app/services/auth";
+import {
+  useGetMemberQuery,
+  type MemberResponse,
+} from "../../app/services/membership";
 import type { RootState } from "../../app/store";
 
-type UserState = {
-  login: string | null;
-  id: number;
+type MemberState = {
+  members: MemberResponse[] | null;
 };
 
-const slice = createSlice({
-  name: "user",
-  initialState: { login: null, id: 0 } as UserState,
+const membershipSlice = createSlice({
+  name: "member",
+  initialState: { members: null } as MemberState,
   reducers: {
-    getUser: (state, { payload: { login } }: PayloadAction<{ login:string }>) => {
-      state.login = login;
-      state.id = 0;
+    getAllMembers: (state) => {
+      //   const [memberList, { isLoading }] = useGetMemberQuery("");
+      //   state.members = memberList;
     },
   },
 });
 
-export const { getUser } = slice.actions;
+// export const { getMembers }  = slice.actions;
 
-export default slice.reducer;
+// export default slice.Reducer;
 
-export const selectCurrentUser = (state: RootState) => state.auth.user;
+// export const selectMembers = (state: RootState) => state.member.members;
