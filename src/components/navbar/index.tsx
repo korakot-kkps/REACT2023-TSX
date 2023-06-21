@@ -1,6 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 
- function NavBar() {
+ export const NavBar = () => {
   return (
     <Stack>
       <Typography>Navbar</Typography>
@@ -8,4 +8,4 @@ import { Stack, Typography } from "@mui/material";
   );
 }
 
-export default NavBar;
+// export default NavBar;

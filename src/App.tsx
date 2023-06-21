@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import NavBar from "./components/navbar"
+import {NavBar}  from "./components/navbar"
 import { Route, Routes } from 'react-router-dom';
-import Products from "./pages/products";
-import Cart from "./pages/cart";
+import {Products} from "./pages/products";
+import {Cart} from "./pages/cart";
 
 
 function App() {
