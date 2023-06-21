@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fontsource/pattaya": "^5.0.2",
+    "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.4",
     "@mui/styled-engine-sc": "^5.12.0",
     "@reduxjs/toolkit": "^1.9.5",
