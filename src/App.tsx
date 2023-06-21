@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { Login } from "./features/auth/Login";
 import { PrivateOutlet } from "./utils/PrivateOutlet";
 import { ProtectedComponent } from "./features/auth/ProtectedComponent";
+import MembershipComponent from "./features/Membership/MembershipComponent";
 
 function Hooray() {
   return (
@@ -18,7 +19,7 @@ function App() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      <Route path="/portal" element={<ProtectedComponent />} />
+      <Route path="/portal" element={<MembershipComponent />} />
       <Route path="*" element={<PrivateOutlet />}>
       <Route index element={<Hooray />} />
       </Route>

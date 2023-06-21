@@ -1,15 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-
-import { Provider } from "react-redux";
-import { store } from "./app/store";
+ 
 import { BrowserRouter } from "react-router-dom";
-import { worker } from "./mocks/browser";
-
+import { worker } from "./mocks/browser"; 
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
+ 
 worker
-  .start({ quiet: true })
+  .start({ quiet: false })
   .then(() => {
     const root = ReactDOM.createRoot(
       document.getElementById("root") as HTMLElement

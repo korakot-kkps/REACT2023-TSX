@@ -30,13 +30,13 @@ export const Login = () => {
         onChange={handleChange}
         name="username"
         type="text"
-        placeholder="Email"
+        placeholder="Entrer your email.."
       />
       <input
         onChange={handleChange}
         name="password"
         type="text"
-        placeholder=""
+        placeholder="Enter your password.."
       />
       <input
               type="button"

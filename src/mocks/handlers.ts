@@ -1,8 +1,8 @@
 import { rest } from "msw";
 import { nanoid } from "@reduxjs/toolkit";
+import users from "./users"
 
-const token = nanoid();
-
+const token = nanoid(); 
 export const handlers = [
   rest.get("/protected", (req, res, ctx) => {
     const headers = req.headers.all();
@@ -31,6 +31,13 @@ export const handlers = [
         },
         token,
       })
+    );
+  }),
+  rest.get("/member", (req, res, ctx) => {
+   const productIds = req.url.searchParams.getAll('')
+    return res(
+      ctx.delay(1000),
+      ctx.json( users)
     );
   }),
 ];
