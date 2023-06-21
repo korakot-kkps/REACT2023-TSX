@@ -1,0 +1,8 @@
+
+
+//name
+//initialstate
+//reducers
+//extrareducers
+
+
